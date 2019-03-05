@@ -8,10 +8,8 @@ from time import strftime
 if not os.path.exists('log'):  # Create the folder if it doesn't exists
     os.mkdir('log')
 
-root = os.path.dirname(os.path.realpath(__file__))
-
 config = configparser.ConfigParser()
-config.read(os.path.join(root, 'logger.ini'))
+config.read('logger.ini')
 
 filename = "log/{}-{}.log".format(config['Appname'], strftime("%Y_%m_%d_%H_%M_%S"))
 
